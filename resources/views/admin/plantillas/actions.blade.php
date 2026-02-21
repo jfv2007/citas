@@ -1,0 +1,19 @@
+<div class="flex items-center space-x-2">
+
+    @can('update_plantilla')
+        <x-wire-button href="{{ route('admin.plantillas.edit', $plantilla) }}" blue xs>
+            <i class="fa-solid fa-pen-to-square"></i>
+        </x-wire-button>
+    @endcan
+
+
+    {{-- <form action="{{ route('admin.users.destroy', $user) }}"
+        method="POST"
+        class="delete-form">
+        @csrf
+        @method('DELETE')
+        <x-wire-button type="submit" red xs>
+            <i class="fa-solid fa-trash"></i>
+        </x-wire-button>
+    </form> --}}
+</div>

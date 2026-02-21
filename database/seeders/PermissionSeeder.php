@@ -1,0 +1,48 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class PermissionSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        $permissions = [
+            'access_dashboard',
+
+            'create_role',
+            'update_role',
+            'delete_role',
+
+            'create_user',
+            'read_user',
+            'update_user',
+            'delete_user',
+
+            'read_plantilla',
+            'update_plantilla',
+
+            'read_funcionario',
+            'update_funcionario',
+
+            'create_appointment',
+            'read_appointment',
+            'update_appointment',
+            'delete_appointment',
+
+            'read_calendar',
+        ];
+
+
+        foreach ($permissions as $permission) {
+            \Spatie\Permission\Models\Permission::create([
+                'name' => $permission
+                ]);
+        }
+    }
+}
