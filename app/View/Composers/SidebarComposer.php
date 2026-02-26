@@ -14,7 +14,7 @@ class SidebarComposer
     {
         $items = collect(config('sidebar'))
             ->map(function ($item) {
-                return $this->paseItem($item);
+                return $this->parseItem($item);
             });
 
         $items = $items->filter(function ($item) {
@@ -25,13 +25,13 @@ class SidebarComposer
         $view->with('sidebarItems', $items);
     }
 
-    public function paseItem($item)
+    public function parseItem($item)
     {
         switch ($item['type']) {
             case 'header':
                 return new ItemHeader(
                     title: $item['title'],
-                    can: $item['can'] ?? [],
+                    can: $item['can'] ?? []
                 );
 
                 break;
@@ -39,27 +39,29 @@ class SidebarComposer
                 return new ItemLink(
                     title: $item['title'],
                     icon: $item['icon'] ?? 'fa-regular fa-circle',
-                    href: $item['route'] ? route($item["route"]) : '#',
+                    href: $item['route'] ? route($item['route']) : '#',
                     active: $item['active'] ? request()->routeIs($item['active']): false,
-                    can: $item['can'] ?? [],
+                    can: $item['can'] ?? []               
+
                 );
                 break;
             case 'group':
 
-                $group= new itemGroup  (
+                $group= new ItemGroup(
                     title: $item['title'],
                     icon: $item['icon'] ?? 'fa-regular fa-folder',
-                    active: $item['can'] ? request()->routeIs($item['can']) : false ,
+                    active: $item['active'] ? request()->routeIs($item['active']) : false ,
                 );
 
                 foreach ($item['items'] as $subItem) {
-                    $group->add($this->paseItem($subItem));
+                    $group->add($this->parseItem($subItem));
                  }
 
                 break;
 
             default:
-                throw new \InvalidArgumentException("Tipo de item desconocido: {$item['type']}");
+                 throw new \InvalidArgumentException("Tipo de item desconocido: {$item['type']}");
+
                 break;
         }
     }

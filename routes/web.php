@@ -17,4 +17,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+
+    /* Route::resource('admin.roles', \App\Http\Controllers\Admin\RoleController::class); */
+
 });

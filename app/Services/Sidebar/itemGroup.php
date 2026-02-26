@@ -4,7 +4,7 @@ namespace App\Services\Sidebar;
 
 
 
-class itemGroup implements ItemSiderbar
+class ItemGroup implements ItemSiderbar
 {
     protected string $title;
     protected string $icon;

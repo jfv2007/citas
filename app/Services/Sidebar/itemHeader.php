@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Gate;
 
 class ItemHeader implements ItemSiderbar
 {
-    private $title;
+    private string $title;
     private array $can;
 
     public function __construct(string $title, array $can = [])

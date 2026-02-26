@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Services\Sidebar;
+ namespace App\Services\Sidebar;
+/* use App\Services\Sidebar\ItemSiderbar; */
 
 use Illuminate\Support\Facades\Gate;
 
@@ -10,7 +11,7 @@ class ItemLink implements ItemSiderbar
     private string $icon;
     private string $href;
     private bool $active;
-    private array $can = [];
+    private array $can;
 
     public function __construct(string $title, string $icon, string $href, bool $active, array $can)
     {

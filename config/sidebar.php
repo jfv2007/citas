@@ -16,7 +16,7 @@ return [
             'read_plantilla',
             'read_funcionario',
             'read_appointment',
-            'read_calendar',    
+            'read_calendar'
             ]
     ],
     [
@@ -26,9 +26,7 @@ return [
         'route' => 'admin.roles.index',
         'active' => 'admin.roles.*',
         'can' => [
-
-            'read_role',
-
+            'read_role'
             ]
     ],
     [
@@ -48,7 +46,7 @@ return [
         'route' => 'admin.plantillas.index',
         'active' => 'admin.plantillas.*',
         'can' => [
-            'read_plantilla',
+            'read_plantilla'
         ]
     ],
     [
@@ -58,7 +56,7 @@ return [
         'route' => 'admin.funcionarios.index',
         'active' => 'admin.funcionarios.*',
         'can' => [
-            'read_funcionario',
+            'read_funcionario'
         ]
     ],
     [
@@ -68,7 +66,7 @@ return [
         'route' => 'admin.appointments.index',
         'active' => 'admin.appointments.*',
         'can' => [
-            'read_appointment',
+            'read_appointment'
         ]
     ],
     [
@@ -78,7 +76,7 @@ return [
         'route' => 'admin.calendar.index',
         'active' => 'admin.calendar.*',
         'can' => [
-            'read_calendar',
+            'read_calendar'
         ]
     ],
 ];

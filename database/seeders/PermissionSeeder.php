@@ -16,6 +16,7 @@ class PermissionSeeder extends Seeder
             'access_dashboard',
 
             'create_role',
+            'read_role',
             'update_role',
             'delete_role',
 
